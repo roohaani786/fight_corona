@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Fetch Data Example'),
+          title: Text('#fightcorona'),
         ),
         body: Center(
           child: FutureBuilder<Album>(
@@ -71,21 +71,56 @@ class _MyAppState extends State<MyApp> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 120.0,top: 20.0,right: 50.0,bottom: 600.0),
+                  padding: const EdgeInsets.only(left: 20.0,top: 20.0,bottom: 600.0),
                   child: Row(
                     children: <Widget>[
-                      Text("Cases"),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(snapshot.data.cases.toString()),
+                      Text("Cases:-",style:
+                        TextStyle(
+                          color: Colors.blueAccent,
+                        ),),
+                      Card(
+                        color: Colors.black,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Text(snapshot.data.cases.toString(),style:
+                            TextStyle(
+                              color: Colors.blueAccent,
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.w700,
+                            ),),
+                        ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(snapshot.data.deaths.toString()),
+                      Text("Deaths:-",style:
+                      TextStyle(
+                        color: Colors.red,
+                      ),),
+                      Card(
+                        color: Colors.black,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Text(snapshot.data.deaths.toString(),style:
+                          TextStyle(
+                            color: Colors.red,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w700,
+                          ),),
+                        ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(snapshot.data.recovered.toString()),
+                      Text("Recovered:-",style:
+                      TextStyle(
+                        color: Colors.green,
+                      ),),
+                      Card(
+                        color: Colors.black,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Text(snapshot.data.cases.toString(),style:
+                          TextStyle(
+                            color: Colors.green,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w700,
+                          ),),
+                        ),
                       ),
                     ],
                   ),
