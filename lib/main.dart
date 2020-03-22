@@ -58,13 +58,18 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fetch Data Example',
+      debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('#fightcorona'),
+          backgroundColor: Colors.black,
+          title: Align(child: Text('Fight Corona',textAlign: TextAlign.center,),alignment: Alignment.center),
+
         ),
+
         body: Center(
           child: FutureBuilder<Album>(
             future: futureAlbum,
