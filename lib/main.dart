@@ -119,7 +119,7 @@ class _MyAppState extends State<MyApp> {
                         color: Colors.black,
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
-                          child: Text(snapshot.data.cases.toString(),style:
+                          child: Text(snapshot.data.recovered.toString(),style:
                           TextStyle(
                             color: Colors.green,
                             fontSize: 13.0,
