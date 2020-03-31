@@ -4,8 +4,9 @@ A new Flutter application featuring GLobal as well as Country-wide Coronavirus a
 
 I've used Coronavirus API for this which takes data from John Hopkins through WHO, and updates realtime.
 
-#Update
-Made SOme UI Changes.
+# Update
+
+Made Some UI Changes.
 
 ## Getting Started
 
