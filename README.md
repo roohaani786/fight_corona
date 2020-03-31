@@ -1,6 +1,11 @@
 # fight_corona
 
-A new Flutter application.
+A new Flutter application featuring GLobal as well as Country-wide Coronavirus as well as mythbusters and tips to prevent Coronavirus.
+
+I've used Coronavirus API for this which takes data from John Hopkins through WHO, and updates realtime.
+
+#Update
+Made SOme UI Changes.
 
 ## Getting Started
 
