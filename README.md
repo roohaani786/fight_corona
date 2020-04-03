@@ -1,6 +1,12 @@
 # fight_corona
 
-A new Flutter application.
+A new Flutter application featuring Global as well as Country-wide Coronavirus as well as mythbusters and tips to prevent Coronavirus.
+
+I've used Coronavirus API for this which takes data from John Hopkins through WHO, and updates realtime.
+
+# Update
+
+Made Some UI Changes.
 
 ## Getting Started
 
@@ -15,4 +21,9 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-<img src="Screenshot_2020-03-29-12-35-45-269_com.affletus.fight_corona.jpg" width="220" height="320">
+<img src="WhatsApp Image 2020-03-31 at 5.12.11 PM.jpeg" width="220" height="320">
+
+ <video width="320" height="240" controls>
+  <source src="WhatsApp Video 2020-03-31 at 5.12.21 PM.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
