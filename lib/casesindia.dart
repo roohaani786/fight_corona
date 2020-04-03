@@ -1,9 +1,11 @@
-import 'package:fight_corona/MyHomePage.dart';
+import 'package:fight_corona/appbar.dart';
+import 'package:fight_corona/bottomappbar.dart';
+import 'package:fight_corona/drawer.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:gradient_bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
+
 
 
 
@@ -41,16 +43,16 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      country: json['country'],
-      cases: json['cases'],
-      todayCases: json['todaycases'],
-      deaths: json['deaths'],
-      todayDeaths: json['todaydeaths'],
-      recovered: json['recovered'],
-      active: json['active'],
-      critical: json['active'],
-      casesPerOneMillion: json['casesperonemillion'],
-      deathsPerOneMillion: json['deathsperonemillion']
+        country: json['country'],
+        cases: json['cases'],
+        todayCases: json['todayCases'],
+        deaths: json['deaths'],
+        todayDeaths: json['todaydeaths'],
+        recovered: json['recovered'],
+        active: json['active'],
+        critical: json['active'],
+        casesPerOneMillion: json['casesperonemillion'],
+        deathsPerOneMillion: json['deathsperonemillion']
     );
   }
 }
@@ -59,12 +61,12 @@ class Album {
 
 /////////////////////////////////////
 
-class CountryWide extends StatefulWidget{
+class CasesIndia extends StatefulWidget{
   @override
-  _CountryWideState createState() => _CountryWideState();
+  _CasesIndiaState createState() => _CasesIndiaState();
 }
 
-class _CountryWideState extends State<CountryWide> {
+class _CasesIndiaState extends State<CasesIndia> {
   Future<Album> futureAlbum;
 
   @override
@@ -79,164 +81,22 @@ class _CountryWideState extends State<CountryWide> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
 
-          title: Padding(
-            padding: const EdgeInsets.all(36.0),
-            child: Text("Fight Corona",style: TextStyle(fontSize: 22.0,fontStyle: FontStyle.normal,letterSpacing: 3.0,),textAlign: TextAlign.center,
+        //Scaffold Background Color
 
-            ),
-          ),
-          flexibleSpace: Container(
-
-            decoration: BoxDecoration(
-
-              gradient: LinearGradient(colors: [
-                Colors.red,
-                Colors.green,
-              ]),
-              borderRadius: BorderRadius.circular(40.0),
-              boxShadow: [
-                new BoxShadow(blurRadius: 40.0)
-              ],
-
-            ),
-          ),
-//        backgroundColor: Colors.black,
-
-
-          actions: <Widget>[
-            Icon(Icons.healing),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.live_help),
-            ),
-
-          ],
-
-        ),
         backgroundColor: Colors.white,
 
+        //AppBar
 
-        bottomNavigationBar: GradientBottomNavigationBar(
-          backgroundColorStart: Colors.red,
-          backgroundColorEnd: Colors.green,
+        appBar: MyAppbar(),
 
+        //BottomNavigationBar
 
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home,color: Colors.white,), title: Text('Home',style: TextStyle(color:
-            Colors.white),)),
-            BottomNavigationBarItem(icon: Icon(Icons.feedback,color: Colors.white), title: Text('MythBusters',style: TextStyle(color:
-            Colors.white),)),
-            BottomNavigationBarItem(icon: Icon(Icons.whatshot,color: Colors.white), title: Text('Hotspots',style: TextStyle(color:
-            Colors.white),)),
-          ],
+        bottomNavigationBar: MyBottomNavigationBar(),
 
+        //Drawer
 
-
-
-
-//        child: Padding(
-//          padding: const EdgeInsets.all(12.0),
-//          child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            children: <Widget>[
-//              Icon(Icons.home,color: Colors.white,),
-//              Icon(Icons.local_hospital,color: Colors.white,),
-//              Icon(Icons.whatshot,color: Colors.white,),
-//              Icon(Icons.settings,color: Colors.white,),
-//            ],
-//          ),
-//        ),
-
-//        color: Colors.lightBlue,
-
-
-
-        ),
-
-        drawer: Drawer(
-          // Add a ListView to the drawer. This ensures the user can scroll
-          // through the options in the drawer if there isn't enough vertical
-          // space to fit everything.
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text('#fightcorona',style: TextStyle(color: Colors.white,fontSize: 20.0),),
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(15.0),
-                    gradient: LinearGradient(colors: [
-                      Colors.red,
-                      Colors.green,
-                    ])
-                ),
-              ),
-              ListTile(
-                title: Text('Home'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage()));
-                  // ...
-                },
-              ),
-              ListTile(
-                title: Text('Country Wide Cases'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => CountryWide()));
-                  // ...
-                },
-              ),
-
-              ListTile(
-                title: Text('Cases in India'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.pop(context);
-                  // ...
-                },
-              ),
-
-              ListTile(
-                title: Text('MythBusters'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.pop(context);
-                  // ...
-                },
-              ),
-
-              ListTile(
-                title: Text('Symptomps of CoronaVirus'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.pop(context);
-                  // ...
-                },
-              ),
-
-              ListTile(
-                title: Text('About the App'),
-                onTap: () {
-                  // Update the state of the app.
-
-                  Navigator.pop(context);
-                  // ...
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: MyDrawer(),
 
         body: Center(
           child: FutureBuilder<Album>(
@@ -245,9 +105,9 @@ class _CountryWideState extends State<CountryWide> {
               if (snapshot.hasData) {
 
                 return Padding(
-                  padding: const EdgeInsets.all(30.0),
+                  padding: const EdgeInsets.only(left: 30.0,top: 10.0),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 40.0,left:50.0),
+                    padding: const EdgeInsets.only(top: 14.0,left:45.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,7 +118,7 @@ class _CountryWideState extends State<CountryWide> {
                           mainAxisAlignment: MainAxisAlignment.start,
 
                           children: <Widget>[
-                            Text("CoronaVirus cases in India",textAlign: TextAlign.center,style:
+                            Text("Coronavirus cases in India",textAlign: TextAlign.center,style:
                             TextStyle(color: Colors.black,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18.0),),
@@ -328,6 +188,8 @@ class _CountryWideState extends State<CountryWide> {
                                     color: Colors.red,
                                   ),),
                                 ),
+
+
                               ],
                             ),
 
@@ -362,7 +224,83 @@ class _CountryWideState extends State<CountryWide> {
                                       color: Colors.green
                                   ),),
                                 ),
+
+
                               ],
+                            ),
+
+
+                            Padding(padding: const EdgeInsets.only(top: 20.0)),
+
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+
+                                  height: 100.0,
+                                  width: 100.0,
+                                  color: Colors.blueAccent,
+                                  alignment:Alignment.center,
+                                  child: Text("Today Cases",style:
+                                  TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                                ),
+
+                                Padding(padding: const EdgeInsets.only(left: 40.0)),
+
+                                Container(
+                                  height: 100.0,
+                                  width: 100.0,
+                                  color: Colors.black,
+                                  alignment:Alignment.center,
+                                  child: Text(snapshot.data.todayCases.toString(),style:
+                                  TextStyle(
+                                      color: Colors.blueAccent
+                                  ),),
+                                ),
+
+
+                              ],
+                            ),
+
+                            Padding(padding: const EdgeInsets.only(top: 20.0)),
+
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+
+                                  height: 100.0,
+                                  width: 100.0,
+                                  color: Colors.redAccent,
+                                  alignment:Alignment.center,
+                                  child: Text("Deaths Today",style:
+                                  TextStyle(
+                                    color: Colors.white,
+                                  ),),
+                                ),
+
+                                Padding(padding: const EdgeInsets.only(left: 40.0)),
+
+                                Container(
+                                  height: 100.0,
+                                  width: 100.0,
+                                  color: Colors.black,
+                                  alignment:Alignment.center,
+                                  child: Text(snapshot.data.todayDeaths.toString(),style:
+                                  TextStyle(
+                                      color: Colors.redAccent
+                                  ),
+                                 ),
+                               ),
+
+
+                              ],
+
+
                             ),
 
 
@@ -373,6 +311,8 @@ class _CountryWideState extends State<CountryWide> {
 
 
                       ],
+
+
                     ),
 
 
@@ -393,15 +333,11 @@ class _CountryWideState extends State<CountryWide> {
         ),
 
 
-
+      //Text Font-------------
       ),
-      theme: ThemeData(fontFamily: 'KaushanScript',
+      theme: ThemeData(fontFamily: 'Sen',
       ),
-
-
-
-
-
+      //----------------
 
 
     );
