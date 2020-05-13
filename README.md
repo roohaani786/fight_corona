@@ -25,7 +25,7 @@ App by Aman Khan Roohaani !. Create an issue to improve the code.
 
 <ul>
 
-<li><img src="WhatsApp Image 2020-05-13 at 1.17.11 PM.jpeg" width="220" height="320"></li>
+<img src="WhatsApp Image 2020-05-13 at 1.17.11 PM.jpeg" width="220" height="320">
 <img src="WhatsApp Image 2020-05-13 at 1.17.11 PM(1).jpeg" width="220" height="320">
 <img src="WhatsApp Image 2020-05-13 at 1.17.11 PM(2).jpeg" width="220" height="320">
 <img src="WhatsApp Image 2020-05-13 at 1.17.11 PM(3).jpeg" width="220" height="320">
