@@ -21,9 +21,6 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-<img src="WhatsApp Image 2020-03-31 at 5.12.11 PM.jpeg" width="220" height="320">
+<img src="WhatsApp Image 2020-05-13 at 1.17.11 PM.jpeg" width="220" height="320">
 
- <video width="320" height="240" controls>
-  <source src="WhatsApp Video 2020-03-31 at 5.12.21 PM.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video> 
+
